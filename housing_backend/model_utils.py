@@ -6,9 +6,6 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 def get_data():
-    """
-    Loads the housing data, cleans it, and returns it in long format.
-    """
     file_path = os.path.join(BASE_DIR, 'zhvi_data_long.csv')
     if not os.path.exists(file_path):
         raise FileNotFoundError(f"Data file not found: {file_path}")
