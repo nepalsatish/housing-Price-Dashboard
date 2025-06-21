@@ -14,7 +14,7 @@ def update_data():
     # https://www.zillow.com/research/data/
     url = "https://files.zillowstatic.com/research/public_csvs/zhvi/Metro_zhvi_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv"
 
-    data_path = "/var/www/project/Housing/"
+    data_path = ""
     raw_csv_path = os.path.join(data_path, 'zhvi_data.csv')
     long_csv_path = os.path.join(data_path, 'zhvi_data_long.csv')
 
@@ -76,8 +76,8 @@ def update_data():
 
             # Save the model
             city_slug = city_name.replace(" ", "_").lower()
-            model_path = f"/var/www/project/Housing/models/prophet_{city_slug}_model.pkl"
-            forecast_path = f"/var/www/project/Housing/csvs/{city_slug}_price_forecast.csv"
+            model_path = f"../models/prophet_{city_slug}_model.pkl"
+            forecast_path = f"../csvs/{city_slug}_price_forecast.csv"
 
             joblib.dump(model, model_path)
             forecast[["ds", "yhat"]].to_csv(forecast_path, index=False)

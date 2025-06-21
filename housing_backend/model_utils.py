@@ -6,7 +6,7 @@ def get_data():
     """
     Loads the housing data, cleans it, and returns it in long format.
     """
-    file_path = '/var/www/project/Housing/zhvi_data_long.csv'
+    file_path = '../zhvi_data_long.csv'
     if not os.path.exists(file_path):
         raise FileNotFoundError(f"Data file not found: {file_path}")
     
@@ -20,7 +20,7 @@ def load_model(location):
     Loads the pre-trained Prophet model for a given location.
     """
     city_slug = location.replace(' ', '_').lower()
-    model_path = f"/var/www/project/Housing/models/prophet_{city_slug}_model.pkl"
+    model_path = f"../models/prophet_{city_slug}_model.pkl"
 
     if not os.path.exists(model_path):
         raise FileNotFoundError(f"Model file not found: {model_path}")
