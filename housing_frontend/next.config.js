@@ -7,7 +7,7 @@ const nextConfig = {
     return [
       {
         source: '/api/:path*',
-        destination: 'https://housing-price-dashboard-j63g.onrender.com/:path*',
+        destination: 'https://housing-price-dashboard-j63g.onrender.com/api:path*',
       },
     ];
   },
