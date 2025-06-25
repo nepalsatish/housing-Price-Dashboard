@@ -36,7 +36,7 @@ def update_data():
     df = pd.read_csv(raw_csv_path)
 
     # Melt the dataframe to long format
-    id_cols = ['RegionID', 'SizeRank', 'RegionName', 'RegionType', 'StateName', 'State', 'Metro', 'CountyName']
+    id_cols = ["RegionID", "SizeRank", "RegionName", "RegionType", "StateName"]
 
     # The date columns are all columns not in id_cols
     date_cols = [col for col in df.columns if col not in id_cols]

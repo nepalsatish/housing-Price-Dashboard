@@ -1,13 +1,15 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  experimental: {
-    appDir: true,
-  },
+
   async rewrites() {
     return [
+      // {
+      //   source: '/api/:path*',
+      //   destination: 'http://localhost:5000/:path*',
+      // },
       {
         source: '/api/:path*',
-        destination: 'https://housing-price-dashboard-j63g.onrender.com/api:path*',
+        destination: 'https://housing-price-dashboard-j63g.onrender.com/:path*',
       },
     ];
   },
